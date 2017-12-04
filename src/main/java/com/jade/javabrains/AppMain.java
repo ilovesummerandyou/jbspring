@@ -10,8 +10,8 @@ public class AppMain {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"spring.xml");
-		ShapeService s = (ShapeService) ctx.getBean("shapeService");
-		
+		ShapeService s = ctx.getBean("shapeService", ShapeService.class);
+		System.out.println(s.getCircle().getName());
 	}
 
 }

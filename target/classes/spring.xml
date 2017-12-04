@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
-<!-- 	<aop:aspectj-autoproxy /> -->
+	<aop:aspectj-autoproxy />
 
 	<bean id="triangle" class="com.jade.javabrains.model.Triangle">
 		<property name="name" value="Triangle name"/>
@@ -18,4 +18,5 @@
 	
     <bean id="shapeService" class="com.jade.javabrains.service.ShapeService" autowire="byName" />
 
+<bean name="LoginAscept" class="com.jade.javabrains.aspect.loginAspect" />
 </beans>
