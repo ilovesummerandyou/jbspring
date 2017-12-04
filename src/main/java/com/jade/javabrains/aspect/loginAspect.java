@@ -1,6 +1,9 @@
 package com.jade.javabrains.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -17,10 +20,16 @@ public class loginAspect {
 		System.out.println(c.getName());
 	}
 	
-	@Before("args(name)")
-	public void stringArgMethods(String name){
-		System.out.println("Methods that take string arg is called. The value is: " + name);
+	@AfterReturning(pointcut="args(name)", returning="returnString")
+	public void stringArgMethods(String name, Object returnString){
+		System.out.println("Methods that take string arg is called. The value is: " + name +"and the output value is : " + returnString.toString());
 	}
+	
+	@AfterThrowing(pointcut="args(name)", throwing="ex")
+	public void exceptionAdvice(String name, Exception ex){
+		System.out.println("exceptionAdvice is called. The ex is: " + ex.toString());
+	}
+	
 	
 	@Pointcut("execution(public * get*(..))")
 	public void allGetters(){}

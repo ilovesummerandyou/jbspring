@@ -13,7 +13,7 @@
 	</bean>
 
 		<bean id="circle" class="com.jade.javabrains.model.Circle">
-		<property name="name" value="Circle name"/>
+<!-- 		<property name="name" value="Circle name"/> -->
 	</bean>
 	
     <bean id="shapeService" class="com.jade.javabrains.service.ShapeService" autowire="byName" />
