@@ -11,6 +11,7 @@ public class ShapeService {
 	
 	@Loggable
 	public Circle getCircle() {
+		System.out.println("getCircle is called");
 		return circle;
 	}
 	public void setCircle(Circle circle) {

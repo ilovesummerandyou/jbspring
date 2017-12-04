@@ -36,4 +36,8 @@ public class loginAspect {
 //	@Pointcut("execution(public * get*(..))")
 //	public void allGetters(){}
 //	
+	
+	public void loggingAdvice() {
+		System.out.println("Logging from advice");
+	}
 }
