@@ -33,7 +33,7 @@ public class loginAspect {
 	}
 	
 	
-	@Around("allGetters()")
+	@Around("@annotation(com.jade.javabrains.aspect.Loggable)")
 	public Object myAround(ProceedingJoinPoint proceedingJoinPoint){
 		Object returnValue = null;
 		try {
@@ -52,6 +52,9 @@ public class loginAspect {
 	
 	@Pointcut("execution(public * get*(..))")
 	public void allGetters(){}
+	
+//	@Pointcut("execution(* com.jade.javabrains.service.*Service.*(..))")
+//	public void allServiceClass(){}
 	
 	@Pointcut("within(com.jade.javabrains.model.Circle)")
 	public void allCircleMethods(){}
