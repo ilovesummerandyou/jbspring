@@ -11,6 +11,7 @@ public class AppMain {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"spring.xml");
 		ShapeService s = ctx.getBean("shapeService", ShapeService.class);
+		s.getCircle().setName("Dummy name");
 		System.out.println(s.getCircle().getName());
 	}
 
